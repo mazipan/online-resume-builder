@@ -29,3 +29,4 @@ node_modules
 .idea
 # build folder by gruntjs
 build
+src/public/themestruck-harmony-admin-bootstrap-theme/

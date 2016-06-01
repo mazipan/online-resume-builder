@@ -4,21 +4,36 @@ var router = express.Router();
 /* HOMEPAGE */
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'Online Resume Builder'
+    title: 'Resume Builder'
+  });
+});
+
+/* HOMEPAGE */
+router.get('/index.html', function(req, res, next) {
+  res.render('index', {
+    title: 'Resume Builder'
   });
 });
 
 /* LOGIN */
 router.get('/login', function(req, res, next) {
   res.render('login', {
-    title: 'Login | Online Resume Builder'
+    title: 'Resume Builder'
   });
 });
 
 /* REGISTER */
 router.get('/register', function(req, res, next) {
   res.render('register', {
-    title: 'Register | Online Resume Builder'
+    title: 'Resume Builder'
+  });
+});
+
+
+/* REGISTER */
+router.get('/dashboard', function(req, res, next) {
+  res.render('dashboard', {
+    title: 'Resume Builder'
   });
 });
 

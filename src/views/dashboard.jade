@@ -1,0 +1,75 @@
+doctype html
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=edge")
+	meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1")
+	meta(name="description" content="Resume Builder | Tools for create your beauty resume")
+	meta(name="author" content="irfan.maulana")
+	title Resume Builder | Dashboard
+	link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
+	link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
+	link(rel="stylesheet" href="/stylesheets/bootstrap-social.css")
+	link(rel="stylesheet" href="/stylesheets/fileinput.min.css")
+	link(rel="stylesheet" href="/stylesheets/harmony.css")
+body
+
+	div(class="brand clearfix")
+		a(href="index.html" class="logo")
+			img(src="images/logo.jpg" class="img-responsive" alt="")
+		span(class="menu-btn")
+			i(class="fa fa-bars")
+		ul(class="ts-profile-nav")
+			li
+				a(href="#") Help
+			li
+				a(href="#") Settings
+			li(class="ts-account")
+				a(href="#")
+					img(src="images/ts-avatar.jpg" class="ts-avatar hidden-side" alt="")
+					span Account
+						i(class="fa fa-angle-down hidden-side")
+				ul
+					li
+						a(href="#") My Account
+					li
+						a(href="#") Edit Account
+					li
+						a(href="#") Logout
+
+	div(class="ts-main-content")
+		nav(class="ts-sidebar")
+			ul(class="ts-sidebar-menu")
+				li(class="ts-label") Main Menu
+				li(class="open")
+					a(href="#profile")
+						i(class="fa fa-dashboard") &nbsp;&nbsp; Profile
+				li(class="")
+					a(href="#educations")
+						i(class="fa fa-dashboard") &nbsp;&nbsp; Educations
+				li(class="")
+					a(href="#experiences")
+						i(class="fa fa-dashboard") &nbsp;&nbsp; Work Experiences
+				li(class="")
+					a(href="#skills")
+						i(class="fa fa-dashboard") &nbsp;&nbsp; Skills/Abilities
+				li(class="")
+					a(href="#themes")
+						i(class="fa fa-dashboard") &nbsp;&nbsp; Themes
+				li(class="")
+					a(class="btn-primary") Save & Publish
+
+		div(class="content-wrapper")
+			div(class="container-fluid")
+				div(class="row")
+					div(class="col-md-12")
+						h2(class="page-title") Profile
+						
+
+script(src="/javascripts/library/jquery-1.11.0.min.js")
+script(src="/javascripts/library/bootstrap.min.js")
+script(src="/javascripts/library/html5shiv.js")
+script(src="/javascripts/library/respond.min.js")
+script(src="/javascripts/library/fileinput.js")
+script(src="/javascripts/library/main.js")
+	

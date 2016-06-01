@@ -1,29 +1,60 @@
-extends layout
+doctype html
+html(lang="en")
 
-block content
-    div(class="login-block padding5")
-        div(class="login-header padding5 font24 bold") Login to your account !
-        form(role="form" class="form-horizontal")
-            div(class="form-group")
-                div(class="col-sm-10")
-                    div(class="input-group")
-                        div(class="input-group-addon")
-                            i(class="glyphicon glyphicon-user")
-                        input(type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus)
-            div(class="form-group")
-                div(class="col-sm-10")
-                    div(class="input-group")
-                        div(class="input-group-addon")
-                            i(class="glyphicon glyphicon-lock")
-                        input(type="password" id="password" name="password" class="form-control" placeholder="Password" required)
-                        div(class="input-group-addon")
-                            i(class="glyphicon glyphicon-eye-open pointer" id="showhidepass" onclick="showHidePassword()")
-                div(class="col-sm-10 right")
-                    a(href="/forget-password" class="font11") forget your password ?
-            div(class="form-group")
-                div(class="col-sm-10")
-                    button(type="submit" class='btn btn-info')
-                        span(class="glyphicon glyphicon-log-in" aria-hidden="true")
-                        span(class="margin5") Login
-                    span(class="font11 margin5") Not member yet ?&nbsp;
-                        a(href="/register") register here
+head
+	meta(charset="UTF-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=edge")
+	meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1")
+	meta(name="description" content="Resume Builder | Tools for create your beauty resume")
+	meta(name="author" content="irfan.maulana")
+
+	title Resume Builder | Login Page
+
+	link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
+	link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
+	link(rel="stylesheet" href="/stylesheets/bootstrap-social.css")
+	link(rel="stylesheet" href="/stylesheets/fileinput.min.css")
+	link(rel="stylesheet" href="/stylesheets/harmony.css")
+
+body
+
+	div(class="brand clearfix")
+		a(href="/" class="logo")
+			img(src="images/logo.jpg" class="img-responsive" alt="")
+		span(class="menu-btn")
+			i(class="fa fa-bars")
+		ul(class="ts-profile-nav")
+			li
+				a(href="/about-resume-builder") About Us
+
+	div(class="login-page bk-img" style="background-image: url(images/login-bg.jpg)")
+		div(class="form-content")
+			div(class="container")
+				div(class="row")
+					div(class="col-md-6 col-md-offset-3")
+						h1(class="text-center text-bold text-light mt-4x") Sign in
+						div(class="well row pt-2x pb-3x bk-light")
+							div(class="col-md-8 col-md-offset-2")
+								form(action="" class="mt")
+
+									label(for="" class="text-uppercase text-sm") Your Username or Email
+									input(type="text" placeholder="Username" class="form-control mb")
+
+									label(for="" class="text-uppercase text-sm") Password
+									input(type="password" placeholder="Password" class="form-control mb")
+
+									div(class="checkbox checkbox-circle checkbox-info")
+
+									button(class="btn btn-primary btn-block" type="submit")
+										span(class="fa-2x") LOGIN
+									button(class="btn btn-danger btn-block" type="submit")
+										span(class="fa-2x") Sign in with Google
+						div(class="text-center text-light")
+							a(class="text-light" href="/register") Not member ? Register here
+
+
+	script(src="/javascripts/library/jquery-1.11.0.min.js")
+	script(src="/javascripts/library/bootstrap.min.js")
+	script(src="/javascripts/library/html5shiv.js")
+	script(src="/javascripts/library/respond.min.js")
+	script(src="/javascripts/library/fileinput.js")

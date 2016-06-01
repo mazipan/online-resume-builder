@@ -115,3 +115,14 @@ function showHidePassword() {
 
     isShowPassword = !isShowPassword;
 }
+
+
+jQuery(function($) {
+    'use strict';
+
+    $('.navbar-collapse ul li a').on('click', function() {
+        $('.navbar-collapse li').removeClass('active');
+        $(this).closest('li').addClass('active');
+    });
+
+});
