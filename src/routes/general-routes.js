@@ -1,31 +1,37 @@
 var express = require('express');
 var router = express.Router();
 
+const ROOT_URL = "http://localhost:3000";
+
 /* HOMEPAGE */
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'Resume Builder'
+    title: 'Resume Builder',
+    root : ROOT_URL
   });
 });
 
 /* HOMEPAGE */
 router.get('/index.html', function(req, res, next) {
   res.render('index', {
-    title: 'Resume Builder'
+    title: 'Homepage | Resume Builder',
+    root : ROOT_URL
   });
 });
 
 /* LOGIN */
 router.get('/login', function(req, res, next) {
   res.render('login', {
-    title: 'Resume Builder'
+    title: 'Login | Resume Builder',
+    root : ROOT_URL
   });
 });
 
 /* REGISTER */
 router.get('/register', function(req, res, next) {
   res.render('register', {
-    title: 'Resume Builder'
+    title: 'Register | Resume Builder',
+    root : ROOT_URL
   });
 });
 
@@ -33,14 +39,16 @@ router.get('/register', function(req, res, next) {
 /* REGISTER */
 router.get('/dashboard', function(req, res, next) {
   res.render('dashboard', {
-    title: 'Resume Builder'
+    title: 'Dashboard | Resume Builder',
+    root : ROOT_URL
   });
 });
 
 /* FORGET PASSWORD */
 router.get('/forget-password', function(req, res, next) {
   res.render('forgetpassword', {
-    title: 'Forget Password | Online Resume Builder'
+    title: 'Forget Password | Resume Builder',
+    root : ROOT_URL
   });
 });
 

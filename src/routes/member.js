@@ -22,17 +22,18 @@ router.route('/')
                 errorMessage = "Mandatory field can not be blank !";
                 return res.send({result : false, errorDesc : errorMessage});
             }else{
-                var passHash = hashMD5(hashMD5(req.body.password));
+                var passHash = hashMD5(req.body.password);
+
                 member = new MemberModel({
                     username: req.body.username,
                     email: req.body.email,
                     password: passHash,
-                    created: Date.now
+                    created: new Date()
                 });
 
                 member.save(function (err) {
                     if (!err) {
-                        console.log("member : "+product.email + " has been created ");
+                        console.log("member : "+ member.email + " has been created ");
                         member.password = "";
                         return res.send({result : true, member : member});
                     } else {
@@ -47,6 +48,35 @@ router.route('/')
             return res.send({result : false, errorDesc : errorMessage});
         }
     });
+
+// Login with username & password
+router.post('/login', function (req, res){
+    var errorMessage = "";
+    if(typeof req !== 'undefined'){
+        if(req.body.username !== null && req.body.username !== "" &&
+            req.body.password !== null && req.body.password !== ""){
+
+            return MemberModel.findOne({
+                'username': req.body.username,
+                'password': hashMD5(req.body.password)
+            }).exec(function (err, user) {
+                if (!err && user !== null) {
+                    console.info('User success login ==> '+ req.body.username);
+                    return res.send({result : true, user : user});
+                } else {
+                    console.error(err);
+                    return res.send({result : false, errorDesc : 'Error when login '+ req.params.id});
+                }
+            });
+        }else{
+            errorMessage = "Failed getting parameter username or password.";
+            return res.send({result : false, errorDesc : errorMessage});
+        }
+    }else{
+        errorMessage = "Request is null or empty.";
+        return res.send({result : false, errorDesc : errorMessage});
+    }
+});
 
 router.route('/:id')
 

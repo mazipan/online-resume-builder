@@ -8,7 +8,7 @@ head
     meta(name="description" content="Resume Builder | Tools for create your beauty resume")
     meta(name="author" content="irfan.maulana")
 
-    title Resume Builder | Register Page
+    title= title
 
     link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
     link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
@@ -20,7 +20,7 @@ body
 
     div(class="brand clearfix")
         a(href="/" class="logo")
-            img(src="images/logo.jpg" class="img-responsive" alt="")
+            img(src="images/logo.png" class="img-responsive" alt="")
         span(class="menu-btn")
             i(class="fa fa-bars")
         ul(class="ts-profile-nav")
@@ -35,25 +35,29 @@ body
                         h1(class="text-center text-bold text-light mt-4x") Register
                         div(class="well row pt-2x pb-3x bk-light")
                             div(class="col-md-8 col-md-offset-2")
-                                form(action="" class="mt")
+                                form(action="" class="mt" onsubmit="doSubmitRegister(event)")
 
                                     label(for="" class="text-uppercase text-sm") Your Username or Email
-                                    input(type="text" placeholder="Username" class="form-control mb")
+                                    input(type="text" placeholder="Username or Email" class="form-control mb" name="username" id="username")
 
                                     label(for="" class="text-uppercase text-sm") Password
-                                    input(type="password" placeholder="Password" class="form-control mb")
+                                    input(type="password" placeholder="Password" class="form-control mb" name="password" id="password")
 
                                     div(class="checkbox checkbox-circle checkbox-info")
 
                                     button(class="btn btn-primary btn-block" type="submit")
                                         span(class="fa-2x") REGISTER
-                                    button(class="btn btn-danger btn-block" type="submit")
+                                    button(class="btn btn-danger btn-block")
                                         span(class="fa-2x") Register with Google
                         div(class="text-center text-light")
                             a(class="text-light" href="/login") Already member ? Login here
 
+script const ROOT_URL = "#{root}";
 script(src="/javascripts/library/jquery-1.11.0.min.js")
 script(src="/javascripts/library/bootstrap.min.js")
 script(src="/javascripts/library/html5shiv.js")
 script(src="/javascripts/library/respond.min.js")
 script(src="/javascripts/library/fileinput.js")
+script(src="/javascripts/library/md5.js")
+script(src="/javascripts/library/sweet-alert.js")
+script(src="/javascripts/login-register.js")

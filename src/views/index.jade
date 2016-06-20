@@ -6,7 +6,9 @@ head
     meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1")
     meta(name="description" content="Resume Builder | Tools for create your beauty resume")
     meta(name="author" content="irfan.maulana")
-    title Resume Builder
+
+    title= title
+
     link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
     link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
     link(rel="stylesheet" href="/stylesheets/bootstrap-social.css")
@@ -15,7 +17,7 @@ head
 body
     div(class="brand clearfix")
         a(href="/" class="logo")
-            img(src="images/logo.jpg" class="img-responsive" alt="")
+            img(src="images/logo.png" class="img-responsive" alt="")
         span(class="menu-btn")
             i(class="fa fa-bars")
         ul(class="ts-profile-nav")
@@ -34,6 +36,7 @@ body
                             a(href="register" class="btn btn-danger btn-block mt-4x" type="submit")
                                 span(class="fa-2x") Register Now
 
+script const ROOT_URL = "#{root}";
 script(src="/javascripts/library/jquery-1.11.0.min.js")
 script(src="/javascripts/library/bootstrap.min.js")
 script(src="/javascripts/library/html5shiv.js")

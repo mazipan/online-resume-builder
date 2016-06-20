@@ -22,8 +22,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 var generalRoutes = require('./routes/general-routes');
 app.use('/', generalRoutes);
 
-var appProduct = require('./routes/app-product');
-app.use('/app', appProduct);
+var memberRoutes = require('./routes/member');
+app.use('/member', memberRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

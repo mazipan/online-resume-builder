@@ -6,7 +6,9 @@ head
 	meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1")
 	meta(name="description" content="Resume Builder | Tools for create your beauty resume")
 	meta(name="author" content="irfan.maulana")
-	title Resume Builder | Dashboard
+
+	title= title
+
 	link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
 	link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
 	link(rel="stylesheet" href="/stylesheets/bootstrap-social.css")
@@ -16,14 +18,12 @@ body
 
 	div(class="brand clearfix")
 		a(href="index.html" class="logo")
-			img(src="images/logo.jpg" class="img-responsive" alt="")
+			img(src="images/logo.png" class="img-responsive" alt="")
 		span(class="menu-btn")
 			i(class="fa fa-bars")
 		ul(class="ts-profile-nav")
 			li
 				a(href="#") Help
-			li
-				a(href="#") Settings
 			li(class="ts-account")
 				a(href="#")
 					img(src="images/ts-avatar.jpg" class="ts-avatar hidden-side" alt="")
@@ -31,45 +31,43 @@ body
 						i(class="fa fa-angle-down hidden-side")
 				ul
 					li
-						a(href="#") My Account
-					li
-						a(href="#") Edit Account
-					li
-						a(href="#") Logout
+						a(href="./login") Logout
 
 	div(class="ts-main-content")
 		nav(class="ts-sidebar")
 			ul(class="ts-sidebar-menu")
 				li(class="ts-label") Main Menu
 				li(class="open")
-					a(href="#profile")
+					a(href="#profile" data-target="profile")
 						i(class="fa fa-dashboard") &nbsp;&nbsp; Profile
 				li(class="")
-					a(href="#educations")
+					a(href="#educations" data-target="educations")
 						i(class="fa fa-dashboard") &nbsp;&nbsp; Educations
 				li(class="")
-					a(href="#experiences")
+					a(href="#experiences" data-target="experiences")
 						i(class="fa fa-dashboard") &nbsp;&nbsp; Work Experiences
 				li(class="")
-					a(href="#skills")
+					a(href="#skills" data-target="skills")
 						i(class="fa fa-dashboard") &nbsp;&nbsp; Skills/Abilities
 				li(class="")
-					a(href="#themes")
+					a(href="#themes" data-target="themes")
 						i(class="fa fa-dashboard") &nbsp;&nbsp; Themes
 				li(class="")
 					a(class="btn-primary") Save & Publish
 
 		div(class="content-wrapper")
 			div(class="container-fluid")
-				div(class="row")
-					div(class="col-md-12")
-						h2(class="page-title") Profile
+				include dashboard-profile
+				include dashboard-education
+				include dashboard-experience
+				include dashboard-skill
+				include dashboard-themes
 						
-
+script const ROOT_URL = "#{root}";
 script(src="/javascripts/library/jquery-1.11.0.min.js")
 script(src="/javascripts/library/bootstrap.min.js")
 script(src="/javascripts/library/html5shiv.js")
 script(src="/javascripts/library/respond.min.js")
 script(src="/javascripts/library/fileinput.js")
-script(src="/javascripts/library/main.js")
+script(src="/javascripts/dashboard.js")
 	
